@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export default function Home() {
   const[nome,setNome]=useState(" ")
@@ -6,25 +6,29 @@ export default function Home() {
   const[usuarios,setUsuarios]=useState([])
   
 
-  function post(){
-    fetch('api/questoes/1',{method:'POST',body:JSON.stringify({nome,idade})})
+  async function post(){
+     await fetch('api/questoes/1',{method:'POST',body:JSON.stringify({nome,idade})})
+
+    const resp = await fetch('api/questoes/1')
+    const usuarios =  await resp.json()
+    setUsuarios(usuarios)
   }
-  setNome("")
-  setIdade(0)
   
-  fetch('api/questoes/1').then((res)=>{res.json()}).then((re)=>setUsuarios(re))
+  
 
   
   function renderizarUsuarios(){
-    return usuarios.map((usuario,i)=><li id={i}>{usuario}</li>)
+    return usuarios.map((user,i)=>{
+    return <li key={i}>O usuário {user.nome} tem {user.idade} anos</li>})
   }
+  
   
 
   
   return (<>
     <div>
       <input type="text" value={nome} onChange={ev=>setNome(ev.target.value)}/>
-      <input type="number" value={idade} onChange={ev=>setIdade(ev.target.value)} />
+      <input type="number" value={idade} onChange={ev=>setIdade(+ev.target.value)} />
       <button onClick={post} >ok</button>
       <ul>
         {renderizarUsuarios()}
