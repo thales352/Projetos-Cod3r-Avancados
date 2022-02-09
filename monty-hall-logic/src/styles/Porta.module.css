@@ -6,6 +6,17 @@
   width: var(--area-porta-largura);
   height: var(--area-porta-altura);
 }
+.selecao {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 25px solid gold;
+  visibility: hidden;
+}
+.selecionada {
+  visibility: visible;
+}
 .portal {
   display: flex;
   width: 90%;
