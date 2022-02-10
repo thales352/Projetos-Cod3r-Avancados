@@ -18,4 +18,10 @@ a {
 :root {
   --area-porta-altura: 310px;
   --area-porta-largura: 200px;
+  --cor-primaria: #a70d1f;
+  --cor-secundaria: #ff6f00;
+  --cor-terciaria: #5d9ca5;
+  --cor-escurecida: #5a1f2d;
+  --cor-escura: #5a1f2d;
+  --cor-clara: azure;
 }

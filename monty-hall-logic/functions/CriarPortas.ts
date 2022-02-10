@@ -8,13 +8,13 @@ export default (qtde:number,selecionada:number):PortaModel[] => {
       return new PortaModel(num,temPresente)
   })
 };
-export const atualizarPortas = (portas:PortaModel[],modificada:PortaModel):PortaModel[] => {
-  return portas.map((portaAtual)=>{
-    const igualModificada = portaAtual.numero === modificada.numero
-    if (igualModificada){
-      return modificada
+export const atualizarPortas = (portas:PortaModel[],modificacao:PortaModel):PortaModel[] => {
+  return portas.map((portaAntiga)=>{
+    const igualModificada = portaAntiga.numero === modificacao.numero
+    if (!igualModificada){
+      return modificacao.aberta?portaAntiga:portaAntiga.desselecionar()
     }
-    return portaAtual
+    return modificacao
   })
 
 

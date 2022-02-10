@@ -11,39 +11,42 @@
   height: 0;
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
-  border-top: 25px solid gold;
+  border-top: 25px solid var(--cor-secundaria);
   visibility: hidden;
 }
 .selecionada {
   visibility: visible;
 }
 .portal {
+  background-color: var(--cor-clara);
   display: flex;
+  flex-direction: column-reverse;
   width: 90%;
+  height: 290;
   flex-grow: 1;
-  border-top: 5px solid black;
-  border-left: 5px solid black;
-  border-right: 5px solid black;
+  border-top: 5px solid var(--cor-escura);
+  border-left: 5px solid var(--cor-escura);
+  border-right: 5px solid var(--cor-escura);
 }
 
 .porta {
   position: relative;
   display: flex;
   flex-direction: column;
-  background: chocolate;
+  background: var(--cor-escurecida);
   align-items: center;
   padding: 2rem;
-  flex-grow: inherit;
+  flex-grow: 1;
 }
 .numero {
   font-size: 2rem;
   font-weight: bold;
-  color: azure;
+  color: var(--cor-clara);
 }
 .chao {
   height: 10px;
   width: 100%;
-  background-color: #ddd;
+  background-color: var(--cor-primaria);
 }
 .macaneta {
   position: absolute;
@@ -52,6 +55,6 @@
   height: 20px;
   width: 20px;
   border-radius: 50%;
-  background-color: brown;
+  background-color: var(--cor-primaria);
   box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5);
 }
