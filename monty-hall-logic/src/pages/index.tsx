@@ -1,8 +1,9 @@
-import {Button, InputNum} from "../../components/All";
+import {Button} from "../../components/All";
+import  InputNum  from "../../components/Input";
 import { useState } from "react";
 
-export default function Index(second) {
-const[num,setnum]=useState(0)
+export default function Index() {
+const[num,setnum]=useState(3)
 function verificarNumero(numero:number){
   if(numero<1|| numero>100){
     return
@@ -16,7 +17,8 @@ function verificarNumero(numero:number){
 
   return (
     <div style={{display:"flex"}}>
-      <InputNum value={num} onChange={(num)=>{}}/>
+      <InputNum value={num} onChange={(numero)=>{setnum(numero)}}></InputNum>
+      <span>{num}</span>
       <Button/>
     </div>
   )
