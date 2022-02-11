@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "src/pages/jogo/[portas].js/[temPresente].jsx", "src/pages/jogo/[portas].js", "src/pages/jogo/[portas]"  ],
   "exclude": [
     "node_modules"
   ]
