@@ -1,5 +1,5 @@
 import {Button} from "../../components/All";
-import  InputNum  from "../../components/Input";
+import  InputNum  from "../../components/InputNum";
 import { useState } from "react";
 
 export default function Index() {
