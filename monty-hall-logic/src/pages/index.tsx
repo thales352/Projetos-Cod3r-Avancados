@@ -1,13 +1,14 @@
-import { Botao, Entrada, Porta } from '../../components/All';
-import { useEffect, useState } from 'react';
+import { Botao, Entrada } from '../../components/All';
+import { useState } from 'react';
 import styles from '../styles/Inicio.module.css';
 import Cartao from '../../components/Cartao';
+import { cripto } from '../../functions/Criptografia';
 
 export default function Index() {
   const [num, setnum] = useState(3);
   const [aleatorio, setale] = useState(Math.floor(Math.random() * num + 1));
   function verificarNumero(numero: number) {
-    if (numero < 3 || numero > 100) {
+    if (numero < 3 || numero > 8) {
       return;
     }
     setale(Math.floor(Math.random() * numero + 1));
@@ -24,9 +25,7 @@ export default function Index() {
         <section className={styles.regras}>
           <Cartao>
             <h3 className={styles.subtitulo}>1. Como Funciona ?</h3>
-            <p>
-              Você deve escolher um número de portas a ser gerado de 3 a 100.
-            </p>
+            <p>Você deve escolher um número de portas a ser gerado de 3 a 8.</p>
           </Cartao>
           <Cartao>
             <h3 className={styles.subtitulo}>2. O Jogo</h3>
@@ -55,7 +54,9 @@ export default function Index() {
             verificarNumero(numero);
           }}
         ></Entrada>
-        <Botao href={`/jogo/${num}/${aleatorio}`}>INICIAR</Botao>
+        <Botao href={`/jogo/${cripto(num)}/${cripto(aleatorio)}`}>
+          INICIAR
+        </Botao>
       </main>
     </>
   );

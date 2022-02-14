@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import { Router, useRouter } from 'next/router';
+import { desCripto } from '../../../../functions/Criptografia';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { Porta, Botao } from '../../../../components/All';
 import CriarPortas, {
@@ -14,7 +14,7 @@ export default function Index(second) {
     const {
       query: { portas, tempresente },
     } = router;
-    setPorta(CriarPortas(+portas, +tempresente));
+    setPorta(CriarPortas(desCripto(portas), desCripto(tempresente)));
   }, [router?.query]);
 
   function render() {
@@ -32,7 +32,7 @@ export default function Index(second) {
   }
 
   return (
-    <div className={styles.Jogo}>
+    <div className={styles.jogo}>
       <div className={styles.portas}>{render()}</div>
       <div className={styles.botoes}>
         <Botao href="/">Ínicio</Botao>

@@ -1,11 +1,17 @@
 .jogo {
   display: flex;
-  min-height: 100%;
+  min-height: 100vh;
   flex-direction: column;
+  background-color: var(--cor-clara);
 }
 .portas {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   margin: 3%;
+}
+.botoes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

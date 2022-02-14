@@ -12,8 +12,19 @@ export const atualizarPortas = (
   portas: PortaModel[],
   modificacao: PortaModel
 ): PortaModel[] => {
+  let portaAleatoria = portas.find(
+    (porta) =>
+      !porta.aberta &&
+      !porta.temPresente &&
+      !(porta.numero === modificacao.numero)
+  );
+
   return portas.map((portaAntiga) => {
     const igualModificada = portaAntiga.numero === modificacao.numero;
+    const igualAleatoria = portaAntiga.numero === portaAleatoria?.numero;
+    if (igualAleatoria) {
+      portaAntiga = portaAntiga.abrir();
+    }
     if (!igualModificada) {
       return modificacao.aberta ? portaAntiga : portaAntiga.desselecionar();
     }
