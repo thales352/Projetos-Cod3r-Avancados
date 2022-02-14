@@ -1,5 +1,6 @@
 import Porta from './Porta';
 import Presente from './Presentes';
-import Button from './Button';
+import Botao from './Botao';
+import Entrada from './Entrada';
 
-export { Porta, Presente, Button };
+export { Porta, Presente, Botao, Entrada };

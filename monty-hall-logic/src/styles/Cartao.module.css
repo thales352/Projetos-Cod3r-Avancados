@@ -1,0 +1,16 @@
+.cartao {
+  display: flex;
+  justify-content: top;
+  align-items: center;
+  flex-direction: column;
+  height: 200px;
+  width: 200px;
+  box-shadow: 0 0 5px 0 var(--cor-secundaria);
+  background-color: var(--cor-secundaria);
+  color: var(--cor-clara);
+  margin: 30px;
+  border-radius: 10px;
+  padding: 10px;
+  text-justify: auto;
+  text-align: center;
+}
