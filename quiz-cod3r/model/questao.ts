@@ -1,3 +1,4 @@
+import Embaralhar from '../functions/embaralhar';
 import RespostaModel from './resposta';
 
 export default class QuestaoModel {
@@ -49,7 +50,24 @@ export default class QuestaoModel {
     this.#respostas = respostas;
     this.#acertou = acertou;
   }
-
+  resposta(indice: number): QuestaoModel {
+    const acertou = this.#respostas[indice]?.certa;
+    const respostas = this.#respostas.map((resp, i) => {
+      const selecionada = indice === i;
+      const deveRevelar = selecionada || resp.certa;
+      return deveRevelar ? resp.revelar() : resp;
+    });
+    return new QuestaoModel(this.#id, this.#enunciado, respostas, acertou);
+  }
+  embaralharResposta(): QuestaoModel {
+    let respostas = Embaralhar(this.#respostas);
+    return new QuestaoModel(
+      this.#id,
+      this.#enunciado,
+      respostas,
+      this.#acertou
+    );
+  }
   toObject() {
     return {
       id: this.#id,

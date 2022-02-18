@@ -32,6 +32,9 @@ export default class RespostaModel {
   static errada(resposta: string): RespostaModel {
     return new RespostaModel(resposta, false);
   }
+  revelar() {
+    return new RespostaModel(this.#valor, this.#certa, true);
+  }
   toObject() {
     return {
       valor: this.#valor,

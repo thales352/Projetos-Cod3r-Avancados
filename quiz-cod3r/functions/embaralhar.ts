@@ -1,9 +1,10 @@
 export default function Embaralhar(list: any[]): any[] {
   return list
     .map((value) => {
-      return { value, random: Math.random() };
+      return { value, randomic: Math.random() };
     })
-    .filter((a, b) => {
-      a.random - b.random;
-    });
+    .sort((obj1, obj2) => {
+      return obj1.randomic - obj2.randomic;
+    })
+    .map((obj) => obj.value);
 }

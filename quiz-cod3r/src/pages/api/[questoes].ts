@@ -6,5 +6,5 @@ export default function handler(req, res) {
   } = req;
   const [questaoPesquisada] = Questoes.filter((q) => q.id == id);
   if (!questaoPesquisada) res.status(204).send();
-  res.status(200).json(questaoPesquisada.toObject());
+  res.status(200).json(questaoPesquisada.embaralharResposta().toObject());
 }
