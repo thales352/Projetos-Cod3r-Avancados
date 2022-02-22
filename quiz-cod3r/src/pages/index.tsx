@@ -1,4 +1,4 @@
-import Questao from '../../components/questao';
+import Questao from '../../components/Questao';
 import QuestaoModel from '../../model/questao';
 import RespostaModel from '../../model/resposta';
 
