@@ -1,0 +1,55 @@
+.container {
+  display: flex;
+  min-height: 4em;
+  width: clamp(15rem, 30vw, 40rem);
+  background-color: transparent;
+
+  perspective: 1000px;
+  margin: 0.25rem;
+}
+.containerDentro {
+  display: flex;
+  flex: 1;
+  position: relative;
+  background-color: transparent;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.container:hover .containerDentro {
+  transform: rotateY(180deg);
+}
+.verso,
+.frente {
+  border: 1px solid #f1f1f1;
+  align-items: center;
+  position: absolute;
+  display: flex;
+
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.frente {
+  background-color: #bbb;
+  color: black;
+}
+.verso {
+  background-color: dodgerblue;
+  color: black;
+  transform: rotateY(180deg);
+}
+.letra {
+  height: 1rem;
+  width: 1rem;
+  padding: 1rem;
+  color: white;
+  margin-inline: 1rem;
+  background-color: black;
+  border-radius: 50%;
+}
+.resposta {
+  padding: 1rem;
+}

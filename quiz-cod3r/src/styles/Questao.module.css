@@ -1,3 +1,7 @@
 .questao {
   flex-direction: column;
 }
+.respostas {
+  display: flex;
+  flex-direction: column;
+}
