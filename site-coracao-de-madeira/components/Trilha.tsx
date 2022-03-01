@@ -8,9 +8,9 @@ interface TrilhaProps {
 }
 
 function renderizar(lista: ElementoTrilhaModel[]) {
-  return lista.map((obj) => {
+  return lista.map((obj, i) => {
     return (
-      <div key={obj.id} className={styles.container}>
+      <div key={i} className={styles.container}>
         <img src={obj.imagem}></img>
         <label>{obj.titulo}</label>
       </div>

@@ -20,4 +20,9 @@ export default class ElementoTrilhaModel {
   public set titulo(value: string) {
     this.#titulo = value;
   }
+  constructor(id: number, imagem: string, titulo: string) {
+    this.#id = id;
+    this.#imagem = imagem;
+    this.#titulo = titulo;
+  }
 }
